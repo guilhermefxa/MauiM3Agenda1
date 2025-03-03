@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MauiM3Agenda1.Models;
 using SQLite;
-using MauiM3Agenda1.Models;
 
 namespace MauiM3Agenda1.Helpers
 {
