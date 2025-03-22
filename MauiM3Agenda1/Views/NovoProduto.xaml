@@ -4,18 +4,26 @@
              x:Class="MauiM3Agenda1.Views.NovoProduto"
              Title="Novo Produto">
 
+    <!-- Botão na barra superior que chama o método ToolbarItem_Clicked ao ser clicado -->
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
 
+    <!-- Layout empilhado verticalmente com espaçamento e margem -->
     <VerticalStackLayout Spacing="10" Padding="10">
+
+        <!-- Campo para descrição do produto -->
         <Label Text="Descrição do Produto:" />
         <Entry x:Name="txt_descricao" />
 
+        <!-- Campo para quantidade (somente números) -->
         <Label Text="Quantidade:" />
         <Entry x:Name="txt_quantidade" Keyboard="Numeric" />
 
+        <!-- Campo para preço unitário (somente números) -->
         <Label Text="Preço Unitário:" />
         <Entry x:Name="txt_preco" Keyboard="Numeric" />
+
     </VerticalStackLayout>
+
 </ContentPage>
