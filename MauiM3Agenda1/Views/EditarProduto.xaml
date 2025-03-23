@@ -4,18 +4,29 @@
              x:Class="MauiM3Agenda1.Views.EditarProduto"
              Title="{Binding Descricao}">
 
+    <!-- Barra de ferramentas no topo da página -->
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked" />
+        <!-- Botão para salvar, chama o evento 'ToolbarItem_Clicked' -->
     </ContentPage.ToolbarItems>
 
+    <!-- Layout principal da página -->
     <VerticalStackLayout Spacing="10" Padding="10">
+        <!-- Layout empilhado verticalmente com espaçamento e padding -->
+
+        <!-- Campo de entrada para a descrição do produto -->
         <Label Text="Descrição do Produto:" />
         <Entry x:Name="txt_descricao" Text="{Binding Descricao}" />
+        <!-- Vincula a propriedade 'Descricao' -->
 
+        <!-- Campo de entrada para a quantidade -->
         <Label Text="Quantidade:" />
         <Entry x:Name="txt_quantidade" Text="{Binding Quantidade}" Keyboard="Numeric" />
+        <!-- Apenas números são permitidos -->
 
+        <!-- Campo de entrada para o preço unitário -->
         <Label Text="Preço Unitário:" />
         <Entry x:Name="txt_preco" Text="{Binding Preco}" Keyboard="Numeric" />
+        <!-- Apenas números são permitidos -->
     </VerticalStackLayout>
 </ContentPage>

@@ -4,22 +4,31 @@
              x:Class="MauiM3Agenda1.Views.ListaProduto"
              Title="Minhas Compras">
 
-    <!-- Botões na barra superior -->
+    <!-- Definição da barra de ferramentas com dois botões -->
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Somar" Clicked="ToolbarItem_Clicked_1" />
-        <!-- Apenas exibe o botão, sem ação definida -->
+        <!-- Botão que chama o evento ToolbarItem_Clicked_1 -->
         <ToolbarItem Text="Adicionar" Clicked="ToolbarItem_Clicked" />
-        <!-- Chama um método ao clicar -->
+        <!-- Botão que chama o evento ToolbarItem_Clicked -->
     </ContentPage.ToolbarItems>
 
-    <!-- Layout que organiza os elementos na tela -->
+    <!-- Layout principal da página -->
     <VerticalStackLayout>
+
+        <!-- Barra de pesquisa para buscar produtos -->
         <SearchBar x:Name="txt_search" 
-                    Placeholder="Busca de Produtos"
-                    TextChanged="txt_search_TextChanged"/>
+               Placeholder="Busca de Produtos"
+               TextChanged="txt_search_TextChanged"/>
+        <!-- Chama o evento ao alterar o texto -->
+
+        <!-- Lista de produtos -->
         <ListView x:Name="lst_produtos" ItemSelected="lst_produtos_ItemSelected">
+            <!-- Chama o evento ao selecionar um item -->
+
+            <!-- Cabeçalho da lista -->
             <ListView.Header>
                 <Grid ColumnDefinitions="*, *, *, *, *">
+                    <!-- Define colunas para os títulos -->
                     <Label Grid.Column="0" Text="ID" />
                     <Label Grid.Column="1" Text="Descrição" />
                     <Label Grid.Column="2" Text="Preço" />
@@ -27,23 +36,35 @@
                     <Label Grid.Column="4" Text="Total" />
                 </Grid>
             </ListView.Header>
+
+            <!-- Template para exibição dos itens da lista -->
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
+
+                        <!-- Ações de contexto para cada item -->
                         <ViewCell.ContextActions>
                             <MenuItem Text="Remover" Clicked="MenuItem_Clicked" />
+                            <!-- Botão para remover o item -->
                         </ViewCell.ContextActions>
+
+                        <!-- Layout dos itens da lista -->
                         <Grid ColumnDefinitions="*, *, *, *, *">
+                            <!-- Define colunas para os itens -->
                             <Label Grid.Column="0" Text="{Binding Id}" />
+                            <!-- Exibe o ID -->
                             <Label Grid.Column="1" Text="{Binding Descricao}" />
+                            <!-- Exibe a descrição -->
                             <Label Grid.Column="2" Text="{Binding Preco}" />
+                            <!-- Exibe o preço -->
                             <Label Grid.Column="3" Text="{Binding Quantidade}" />
+                            <!-- Exibe a quantidade -->
                             <Label Grid.Column="4" Text="{Binding Total}" />
+                            <!-- Exibe o total -->
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </VerticalStackLayout>
-
 </ContentPage>
